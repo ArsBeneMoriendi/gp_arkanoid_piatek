@@ -20,6 +20,12 @@ while gra_dziala:
         elif zdarzenie.type == pygame.QUIT: 
             gra_dziala = False 
 
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_RIGHT]:
+        platforma.ruszaj_platforma(1)
+    if keys[pygame.K_LEFT]:
+        platforma.ruszaj_platforma(-1)
+
     ekran.blit(obraz_tla, (0,0))
     ekran.blit(platforma.obraz, platforma.rect)
     pygame.display.flip()
